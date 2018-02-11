@@ -1,14 +1,18 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <ninjas></ninjas>
+    <ninjas></ninjas> <!-- Global nested component -->
+    <ninjas2></ninjas2> <!--local nested component -->
     <p>{{greeting()}}</p>
   </div>
 </template>
 
 <script>
+import Ninjas2 from './Ninjas2.vue' //local nested component
 export default {
-  name: 'app',
+  components:{
+    'ninjas2':Ninjas2 //local
+  },
   data () {
     return {
       title: 'Your first Vue file'
