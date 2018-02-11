@@ -1,34 +1,33 @@
 <template>
   <div>
-    <h1>{{title}}</h1>
-    <ninjas></ninjas> <!-- Global nested component -->
-    <ninjas2></ninjas2> <!--local nested component -->
-    <p>{{greeting()}}</p>
+    <app-header></app-header>
+    <app-ninjas></app-ninjas>
+    <app-footer></app-footer>
+
   </div>
 </template>
 
 <script>
-import Ninjas2 from './Ninjas2.vue' //local nested component
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import Ninjas from './components/Ninjas.vue';
+
 export default {
   components:{
-    'ninjas2':Ninjas2 //local
+    'app-header': Header,
+    'app-footer': Footer,
+    'app-ninjas': Ninjas
   },
   data () {
     return {
-      title: 'Your first Vue file'
-    }
-  },
-  methods:{
-    greeting:function(){
-      return "hey"
+
     }
   }
 }
+
 </script>
 
 <style scoped>
-h1{
-  color:purple;
-}
+
 
 </style>
